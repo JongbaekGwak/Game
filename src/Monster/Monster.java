@@ -1,0 +1,11 @@
+package Monster;
+
+public class Monster {
+	public String name;
+	public int HP;
+	public int ATK;
+	public int DEF;
+	public int dropGold;
+	public int Lv;
+	public int EXP;
+}
