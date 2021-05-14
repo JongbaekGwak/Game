@@ -8,19 +8,20 @@ public class PlayGame {
 	public static void start() {
 		System.out.println("--------------------------");
 		System.out.println("게임을 시작 합니다.");
-		System.out.println("1.Play | 2.스탯");
-		System.out.println("3.캐릭터 선택 | 4.메인화면");
+		System.out.println("1.Play | 2.스탯 | 3.캐릭터 선택");
+		System.out.println("0.메인화면");
 		System.out.println("--------------------------");
 		System.out.print("선택> ");
-		
+
 		int startChoice = scan.nextInt();
-		if(startChoice == 1) {
+		if (startChoice == 1) {
 			play();
 		} else if (startChoice == 2) {
 			stat();
 		} else if (startChoice == 3) {
 			JobChoice.jobChoice();
-		} else if (startChoice ==4) {
+		} else if (startChoice == 0) {
+			PlayMain.character = null;
 			PlayMain.main(null);
 		}
 	}
@@ -28,6 +29,7 @@ public class PlayGame {
 	public static void stat() {
 		System.out.println("--------------------------");
 		System.out.println("Lv : " + PlayMain.character.Lv);
+		System.out.println("EXP : " + PlayMain.character.EXP);
 		System.out.println();
 		System.out.println("스탯 : ");
 		System.out.println("공격력 : " + PlayMain.character.ATK);
@@ -56,44 +58,34 @@ public class PlayGame {
 			int gameRun = (int) (Math.random() * 4);
 
 			if (gameRun == 0) {
-				System.out.println("계속 이동 합니다.");
+				System.out.println("아직 몬스터를 못 만났습니다.");
+
 			} else if (gameRun == 1) {
 				System.out.println("몬스터를 마주쳤습니다.");
 				System.out.println("몬스터가 도망 갑니다.");
-				System.out.println("계속 이동 하시겠습니까?");
-				System.out.println("y 선택시 계속 이동 합니다.");
-				System.out.println("n 선택시 메인화면으로 이동");
-				System.out.print("선택> ");
+				System.out.println("계속 이동합니다");
 
-				String runRun = scan.next();
-				if (runRun == "n") {
-					System.out.println("메인화면으로 이동 합니다.");
-					PlayMain.main(null);
-					break;
-				} else {
-					System.out.println("계속 이동 합니다.");
-				}
-			} else {
+			} else if (gameRun == 2) {
 				System.out.println("몬스터를 마주쳣습니다.");
 				System.out.println("--------------------------");
-				System.out.print("1. 싸우기  ");
-				System.out.print("2. 도망가기  ");
-				System.out.println("0. 메인으로");
+				System.out.println("1.싸우기 | 2.도망가기");
+				System.out.println("0.메인으로");
 				System.out.println("--------------------------");
 				System.out.print("선택> ");
 
 				int choice = scan.nextInt();
 				System.out.println();
+
 				if (choice == 0) {
+					PlayMain.character = null;
 					PlayMain.main(null);
-					break;
 				} else if (choice == 1) {
-					System.out.println("전투가 시작 됩니다.");
-					Fight.fight();
-					break;
-				} else {
+					PlayFight.fight();
+				} else if (choice == 2) {
 					System.out.println("도망 갑니다.");
 				}
+			} else {
+				System.out.println("돌아 갑니다.");
 			}
 		}
 	}

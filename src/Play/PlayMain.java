@@ -28,7 +28,6 @@ public class PlayMain {
 
 			if (selectNo == 1) {
 				JobChoice.jobChoice();
-				break;
 			} else if (selectNo == 2) {
 				System.out.println("게임을 종료 합니다.");
 				break;
