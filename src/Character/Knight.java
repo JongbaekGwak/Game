@@ -8,6 +8,7 @@ public class Knight extends Character {
 		DEX = 10;
 		INT = 4;
 		LUK = 4;
+		type = 0;
 
 		upDate();
 	}

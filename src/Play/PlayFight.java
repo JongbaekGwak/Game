@@ -2,8 +2,8 @@ package Play;
 
 import java.util.Scanner;
 
-import Monster.Monster;
 import Monster.Goblin;
+import Monster.Monster;
 
 public class PlayFight {
 	private static Scanner scan = new Scanner(System.in);
@@ -24,7 +24,7 @@ public class PlayFight {
 
 		while (fight) {
 			System.out.println("--------------------------");
-			System.out.println("1.공격 | 2." + PlayMain.character.skillName + " | 3.도망가기 | 4.긴급물약(2,000G");
+			System.out.println("1.공격 | 2." + PlayMain.character.skillName + " | 3.도망가기 | 4.긴급물약(2,000G)");
 			System.out.println("0.메인화면");
 			System.out.println("--------------------------");
 			System.out.print("선택> ");
@@ -35,7 +35,7 @@ public class PlayFight {
 				System.out.println("공격!");
 				int dmg = ((int) PlayMain.character.ATK - mon.DEF);
 				int attEva = (int) ((Math.random() * 100) - (mon.DEF));
-				if (attEva == 0) {
+				if (attEva <= 0) {
 					System.out.println(mon.name + "이 회피 하였습니다.");
 				} else {
 					if (dmg <= 0) {
@@ -151,8 +151,8 @@ public class PlayFight {
 			System.out.println("--------------------------");
 			System.out.println(mon.name + "의 공격");
 			int monDmg = ((int) (mon.ATK - PlayMain.character.DEF));
-			int monAttEva = (int) ((Math.random() * 100) - (PlayMain.character.DEF));
-			if (monAttEva == 0) {
+			int monAttEva = (int) ((Math.random() * 100) - (PlayMain.character.LUK));
+			if (monAttEva <= 0) {
 				System.out.println(mon.name + "이 회피 하였습니다.");
 			} else {
 				if (monDmg <= 0) {

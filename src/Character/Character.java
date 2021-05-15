@@ -5,6 +5,8 @@ public class Character {
 	
 	public String skillName;
 	
+	public int type;
+	
 	public int Lv = 1;
 	public int EXP = 0;
 	
@@ -45,10 +47,10 @@ public class Character {
 	}
 	
 	public void stat() {
-		ATK = ((((double) STR * 10) + ((double) DEX * 0.5) + ((double) LUK * 0.5)) / 2);
-		DEF = ((((double) STR * 1) + ((double) DEX * 5) + ((double) LUK * 10)) / 2);
-		mATK = ((((double) INT * 10) + ((double) DEX * 0.5) + ((double) LUK * 0.5)) / 2);
-		mDEF = ((((double) INT * 1) + ((double) DEX * 5) + ((double) LUK * 10)) / 2);
+		ATK = ((((double) STR * 2) + ((double) DEX * 0.5) + ((double) LUK * 0.5)) / 2);
+		DEF = ((((double) STR * 1) + ((double) DEX * 2) + ((double) LUK * 0.5)) / 2);
+		mATK = ((((double) INT * 2) + ((double) DEX * 0.5) + ((double) LUK * 0.5)) / 2);
+		mDEF = ((((double) INT * 1) + ((double) DEX * 2) + ((double) LUK * 0.5)) / 2);
 	}
 	
 	
