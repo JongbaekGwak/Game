@@ -1,7 +1,7 @@
 package Play;
 
-import Inventory.*;
-import Shop.*;
+import Inventory.Inventory;
+import Shop.Shop;
 public class PlayGame {
 
 	public static void start() {
@@ -37,6 +37,7 @@ public class PlayGame {
 
 	public static void stat() {
 		System.out.println("-------------------------------");
+		System.out.println("캐릭터 : " + PlayMain.character.name);
 		System.out.println("Lv : " + PlayMain.character.Lv);
 		System.out.println("EXP : " + PlayMain.character.EXP);
 		System.out.println();

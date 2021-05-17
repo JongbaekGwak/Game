@@ -1,7 +1,9 @@
 package Inventory;
 
-import Play.*;
 import java.util.Scanner;
+
+import Play.PlayGame;
+import Play.PlayMain;
 
 public class Inventory {
 	public static Scanner scan = new Scanner(System.in);
@@ -15,6 +17,7 @@ public class Inventory {
 			for (int i = 0; i < PlayMain.inven.length; i++) {
 				if (PlayMain.inven[i] != null) {
 					System.out.println();
+					System.out.println("인벤토리");
 					System.out.println("-------------------------------");
 					System.out.println((i + 1) + ". " + PlayMain.inven[i].name);
 					System.out.println("능력치 : ");
